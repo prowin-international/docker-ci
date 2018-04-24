@@ -1,4 +1,4 @@
-FROM tetraweb/php:7.1-fpm
+FROM tetraweb/php:7.2-fpm
 
 MAINTAINER proWIN International <web@prowin.net>
 
