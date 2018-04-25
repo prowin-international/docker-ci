@@ -6,3 +6,7 @@ RUN apt-get update && apt-get install -y zip unzip
 	
 RUN curl -LsS https://deployer.org/deployer.phar -o /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
+	
+RUN curl -sS https://getcomposer.org/installer | php \
+ && sudo mv composer.phar /usr/local/bin/composer \
+ && sudo chmod +x /usr/local/bin/dep 
