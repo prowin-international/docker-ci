@@ -9,13 +9,15 @@ RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y zip unzip git wget
 
-RUN apt-get install -y software-properties-common curl apt-transport-https lsb-release ca-certificates
+RUN apt-get install -y software-properties-common curl apt-transport-https lsb-release ca-certificates gnupg
 
 # Install PPAs
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 	&& echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_9.x -o ~/setup_9.x \
+	&& chmod +x ~/setup_9.x \
+	&& ~/setup_9.x
 
 RUN apt-get update
 
