@@ -1,4 +1,4 @@
-FROM debian:9.4
+FROM debian:9.7
 
 MAINTAINER proWIN International <web@prowin.net>
 
@@ -15,9 +15,13 @@ RUN apt-get install -y software-properties-common curl apt-transport-https lsb-r
 RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 	&& echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x -o ~/setup_9.x \
-	&& chmod +x ~/setup_9.x \
-	&& ~/setup_9.x
+RUN curl -sL https://deb.nodesource.com/setup_11.x -o ~/setup_11.x \
+	&& chmod +x ~/setup_11.x \
+	&& ~/setup_11.x
+
+#curl -sL https://deb.nodesource.com/setup_9.x -o ~/setup_9.x \
+#	&& chmod +x ~/setup_9.x \
+#	&& ~/setup_9.x
 
 RUN apt-get update
 
