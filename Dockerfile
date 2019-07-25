@@ -19,20 +19,16 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x -o ~/setup_11.x \
 	&& chmod +x ~/setup_11.x \
 	&& ~/setup_11.x
 
-#curl -sL https://deb.nodesource.com/setup_9.x -o ~/setup_9.x \
-#	&& chmod +x ~/setup_9.x \
-#	&& ~/setup_9.x
-
 RUN apt-get update
 
-# PHP 7.2
+# PHP 7.3
 RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
-	php7.2-fpm php7.2-cli php7.2-xml php7.2-mysql php7.2-zip php7.2-curl php7.2-gd \
-	php7.2-mbstring php7.2-soap php7.2-sqlite php7.2-gmp
+	php7.3-fpm php7.3-cli php7.3-xml php7.3-mysql php7.3-zip php7.3-curl php7.3-gd \
+	php7.3-mbstring php7.3-soap php7.3-sqlite php7.3-gmp
 
 RUN sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/7.2/cli/php.ini
 
-RUN update-alternatives --set php /usr/bin/php7.2
+RUN update-alternatives --set php /usr/bin/php7.3
 
 # Deployer	
 RUN curl -LsS https://deployer.org/deployer.phar -o /usr/local/bin/dep \
