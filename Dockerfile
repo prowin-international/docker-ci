@@ -26,7 +26,7 @@ RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-chang
 	php7.3-fpm php7.3-cli php7.3-xml php7.3-mysql php7.3-zip php7.3-curl php7.3-gd \
 	php7.3-mbstring php7.3-soap php7.3-sqlite php7.3-gmp
 
-RUN sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/7.2/cli/php.ini
+RUN sed -i "s/memory_limit = .*/memory_limit = 512M/" /etc/php/7.3/cli/php.ini
 
 RUN update-alternatives --set php /usr/bin/php7.3
 
