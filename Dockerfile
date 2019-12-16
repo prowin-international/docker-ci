@@ -21,10 +21,10 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x -o ~/setup_10.x \
 
 RUN apt-get update
 
-# PHP 7.3
+# PHP 7.4
 RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
 	php7.4-fpm php7.4-cli php7.4-xml php7.4-mysql php7.4-zip php7.4-curl php7.4-gd \
-	php7.4-mbstring php7.4-soap php7.4-sqlite php7.4-gmp php7.4-memcached
+	php7.4-mbstring php7.4-soap php7.4-sqlite php7.4-gmp php7.4-memcached php7.4-ldap
 
 RUN sed -i "s/memory_limit = .*/memory_limit = 2048M/" /etc/php/7.4/cli/php.ini
 
