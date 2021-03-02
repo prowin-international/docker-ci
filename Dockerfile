@@ -45,6 +45,10 @@ RUN apt-get install -y nodejs
 
 RUN npm install -g npm
 
+RUN npm install -g piral-cli
+
+# Piral / Pilet CLI
+
 #
 # Clean Up
 #
