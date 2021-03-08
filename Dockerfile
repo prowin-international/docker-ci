@@ -47,6 +47,8 @@ RUN npm install -g npm
 
 RUN npm install -g piral-cli
 
+RUN npm install -g cloc
+
 # Piral / Pilet CLI
 
 #
