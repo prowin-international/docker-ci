@@ -32,8 +32,8 @@ RUN sed -i "s/memory_limit = .*/memory_limit = 2048M/" /etc/php/7.4/cli/php.ini
 RUN update-alternatives --set php /usr/bin/php7.4
 
 # Deployer	
-RUN curl -LO https://deployer.org/deployer.phar
-    && mv deployer.phar /usr/local/bin/dep
+RUN curl -LO https://deployer.org/deployer.phar \
+    && mv deployer.phar /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
 
 # Composer
