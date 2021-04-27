@@ -41,6 +41,10 @@ RUN curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer \
 	&& chmod +x /usr/local/bin/dep 
 	
+# PHPunit
+RUN curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
+RUN chmod +x /usr/local/bin/phpunit
+
 # Node.js
 RUN apt-get install -y nodejs
 
