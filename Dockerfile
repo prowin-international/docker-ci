@@ -45,6 +45,9 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
 RUN chmod +x /usr/local/bin/phpunit
 
+# Symyfony
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+
 # Node.js
 RUN apt-get install -y nodejs
 
