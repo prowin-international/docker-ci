@@ -47,6 +47,7 @@ RUN chmod +x /usr/local/bin/phpunit
 
 # Symyfony
 RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
 # Node.js
 RUN apt-get install -y nodejs
