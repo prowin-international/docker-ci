@@ -62,7 +62,7 @@ RUN npm install -g piral-cli
 RUN npm install -g cloc
 
 # Ansible
-RUN apt install ansible
+RUN apt install -y ansible
 
 # Ansistrano
 RUN ansible-galaxy install ansistrano.deploy ansistrano.rollback
