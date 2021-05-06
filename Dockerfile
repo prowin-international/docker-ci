@@ -19,6 +19,8 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x -o ~/setup_10.x \
 	&& chmod +x ~/setup_10.x \
 	&& ~/setup_10.x
 
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+
 RUN apt-get update
 
 # PHP 7.4
@@ -54,11 +56,16 @@ RUN apt-get install -y nodejs
 
 RUN npm install -g npm
 
+# Piral / Pilet CLI
 RUN npm install -g piral-cli
 
 RUN npm install -g cloc
 
-# Piral / Pilet CLI
+# Ansible
+RUN apt install ansible
+
+# Ansistrano
+RUN ansible-galaxy install ansistrano.deploy ansistrano.rollback
 
 #
 # Clean Up
