@@ -23,15 +23,15 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 
 RUN apt-get update
 
-# PHP 7.4
+# PHP 8.0
 RUN apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages \
-	php7.4-fpm php7.4-cli php7.4-xml php7.4-mysql php7.4-zip php7.4-curl php7.4-gd \
-	php7.4-mbstring php7.4-soap php7.4-sqlite php7.4-gmp php7.4-memcached php7.4-ldap \
-	php7.4-intl
+	php8.0-fpm php8.0-cli php8.0-xml php8.0-mysql php8.0-zip php8.0-curl php8.0-gd \
+	php8.0-mbstring php8.0-soap php8.0-sqlite php8.0-gmp php8.0-memcached php8.0-ldap \
+	php8.0-intl
 
-RUN sed -i "s/memory_limit = .*/memory_limit = 2048M/" /etc/php/7.4/cli/php.ini
+RUN sed -i "s/memory_limit = .*/memory_limit = 2048M/" /etc/php/8.0/cli/php.ini
 
-RUN update-alternatives --set php /usr/bin/php7.4
+RUN update-alternatives --set php /usr/bin/php8.0
 
 # Deployer	
 RUN curl -LO https://deployer.org/deployer.phar \
