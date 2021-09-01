@@ -2,7 +2,7 @@ FROM debian:10
 
 MAINTAINER proWIN International <web@prowin.net>
 
-# Init
+# Initd
 RUN export DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get -y upgrade
