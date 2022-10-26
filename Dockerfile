@@ -7,7 +7,7 @@ RUN export DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get -y upgrade
 
-RUN apt-get install -y zip unzip git wget rsync
+RUN apt-get install -y zip unzip git wget rsync python3
 
 RUN apt-get install -y software-properties-common curl apt-transport-https lsb-release ca-certificates gnupg
 
